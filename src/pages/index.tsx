@@ -1,137 +1,156 @@
-import React from "react";
-import Head from "next/head";
-import Header from "@/components/Header";
-import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import Link from "next/link";
+import Head from 'next/head';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ExternalLink } from 'lucide-react';
 
 export default function Home() {
+  const moonClerkUrl = "https://www.moonclerk.com/?via=maxime-emmanuel";
+  
   return (
     <>
       <Head>
-        <title>Join MoonClerk - Accept Recurring & One-Time Online Payments</title>
-        <meta name="description" content="Accept recurring & one-time online payments with MoonClerk. No credit card required. No contracts. Cancel anytime." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>JoinMoonClerk - Streamline Your Recurring Payments with MoonClerk</title>
+        <meta name="description" content="Transform your business with MoonClerk's powerful recurring payment solution. Easy setup, secure payments, and seamless integration. Start your 14-day free trial today." />
+        <meta name="keywords" content="MoonClerk, recurring payments, payment processing, subscription billing, online payments, payment forms" />
+        <meta property="og:title" content="JoinMoonClerk - Streamline Your Recurring Payments" />
+        <meta property="og:description" content="Transform your business with MoonClerk's powerful recurring payment solution. Start your 14-day free trial today." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://joinmoonclerk.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="canonical" href="https://joinmoonclerk.com" />
       </Head>
-      <div className="bg-background min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">
-          {/* Hero Section */}
-          <section className="py-20 px-4 sm:px-6 lg:px-8 text-center">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-                You're just 5 minutes from accepting recurring & one-time online payments
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                No credit card required. No contracts. Cancel anytime.
-              </p>
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                Explore for Free
-              </Button>
-            </div>
-          </section>
 
-          {/* Features Section */}
-          <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/50">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Card className="bg-background/50 backdrop-blur">
-                  <CardHeader>
-                    <CardTitle>Checkouts</CardTitle>
-                    <CardDescription>
-                      Simple, fast, great looking, and secure payment forms that maximize successful checkouts.
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-                <Card className="bg-background/50 backdrop-blur">
-                  <CardHeader>
-                    <CardTitle>Automation</CardTitle>
-                    <CardDescription>
-                      Convert everyday tasks into "set-it and forget-it" automations through integrations.
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-                <Card className="bg-background/50 backdrop-blur">
-                  <CardHeader>
-                    <CardTitle>Billing</CardTitle>
-                    <CardDescription>
-                      Flexible billing options with control over when, how much, and how often you charge.
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </div>
-            </div>
-          </section>
+      {/* Hero Section */}
+      <section className="py-16 md:py-24">
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
+            Transform Your Business with MoonClerk's Recurring Payments
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Streamline your payment process with MoonClerk's powerful, easy-to-use platform. No coding required.
+          </p>
+          <div className="flex items-center justify-center gap-4">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <a 
+                href={moonClerkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                Start Free Trial <ExternalLink className="h-4 w-4" />
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/features">
+                Learn More
+              </Link>
+            </Button>
+          </div>
+          <p className="text-sm text-muted-foreground mt-4">
+            14-day free trial • No credit card required
+          </p>
+        </div>
+      </section>
 
-          {/* Security Section */}
-          <section className="py-16 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">Bank-level secure and compliant</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="p-6 rounded-lg border bg-card">
-                  <h3 className="font-semibold mb-2">SSL Encryption</h3>
-                  <p className="text-muted-foreground">Full SSL encryption for the entire checkout process.</p>
-                </div>
-                <div className="p-6 rounded-lg border bg-card">
-                  <h3 className="font-semibold mb-2">PCI-DSS Compliance</h3>
-                  <p className="text-muted-foreground">Certified to the most stringent level available.</p>
-                </div>
-                <div className="p-6 rounded-lg border bg-card">
-                  <h3 className="font-semibold mb-2">Anti-Fraud Measures</h3>
-                  <p className="text-muted-foreground">Automated third party anti-fraud measures.</p>
-                </div>
-              </div>
-            </div>
-          </section>
+      {/* Features Preview Section */}
+      <section className="py-16 md:py-24">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Everything You Need for Recurring Payments
+          </h2>
+          <p className="text-xl text-muted-foreground mb-8">
+            Powerful features to help you manage and grow your business
+          </p>
+          <Button asChild variant="link" size="lg">
+            <Link href="/features">
+              View All Features
+            </Link>
+          </Button>
+        </div>
 
-          {/* Contact Section */}
-          <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/50">
-            <div className="max-w-7xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-8">Need Help?</h2>
-              <div className="space-y-4">
-                <p className="text-lg">
-                  <span className="text-muted-foreground">Phone:</span>{" "}
-                  <Link href="tel:8006540411" className="text-blue-500 hover:text-blue-400">
-                    (800) 654-0411
-                  </Link>
-                </p>
-                <p className="text-lg">
-                  <span className="text-muted-foreground">Email:</span>{" "}
-                  <Link href="mailto:help@moonclerk.com" className="text-blue-500 hover:text-blue-400">
-                    help@moonclerk.com
-                  </Link>
-                </p>
-              </div>
-              <div className="mt-8 flex justify-center space-x-4">
-                <Link href="https://twitter.com/moonclerk" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline">Twitter</Button>
-                </Link>
-                <Link href="https://www.facebook.com/moonclerk" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline">Facebook</Button>
-                </Link>
-              </div>
-            </div>
-          </section>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.slice(0, 6).map((feature, index) => (
+            <Card key={index} className="border-2">
+              <CardHeader>
+                <CardTitle className="text-xl">{feature.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">{feature.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
 
-          {/* Footer */}
-          <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t">
-            <div className="max-w-7xl mx-auto text-center text-sm text-muted-foreground">
-              <p>Copyright © 2012-present. MoonClerk is made with care in beautiful Greenville, SC.</p>
-              <p className="mt-2">
-                <Badge variant="secondary" className="mr-2">Affiliate</Badge>
-                This is an affiliate website for MoonClerk. Visit{" "}
-                <Link href="https://www.moonclerk.com" className="text-blue-500 hover:text-blue-400">
-                  moonclerk.com
-                </Link>{" "}
-                for the official website.
-              </p>
-            </div>
-          </footer>
-        </main>
-      </div>
+      {/* Pricing CTA Section */}
+      <section className="py-16 md:py-24 text-center bg-muted">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          Simple, Transparent Pricing
+        </h2>
+        <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          Choose the perfect plan for your business needs
+        </p>
+        <Button asChild size="lg">
+          <Link href="/pricing">
+            View Pricing Plans
+          </Link>
+        </Button>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-16 md:py-24 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          Ready to Transform Your Business?
+        </h2>
+        <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          Join thousands of businesses using MoonClerk for their recurring payments.
+        </p>
+        <div className="flex items-center justify-center gap-4">
+          <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+            <a 
+              href={moonClerkUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              Start Free Trial <ExternalLink className="h-4 w-4" />
+            </a>
+          </Button>
+          <Button asChild size="lg" variant="outline">
+            <Link href="/contact">
+              Contact Sales
+            </Link>
+          </Button>
+        </div>
+      </section>
     </>
   );
 }
+
+const features = [
+  {
+    title: "Easy Setup",
+    description: "Get started in minutes with our intuitive interface. No coding required.",
+  },
+  {
+    title: "Secure Payments",
+    description: "Bank-level security with PCI compliance and SSL encryption.",
+  },
+  {
+    title: "Customizable Forms",
+    description: "Create branded payment forms that match your website's design.",
+  },
+  {
+    title: "Recurring Billing",
+    description: "Automate your recurring payments and subscription management.",
+  },
+  {
+    title: "Payment Analytics",
+    description: "Track payments and analyze your business growth with detailed reports.",
+  },
+  {
+    title: "Customer Management",
+    description: "Manage customer information and payment history in one place.",
+  },
+];
