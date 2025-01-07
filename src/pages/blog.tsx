@@ -116,27 +116,6 @@ const Blog = () => {
             </Card>
           ))}
         </div>
-
-        {/* Newsletter Section */}
-        <div className="mt-20 bg-secondary/50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Stay Updated</h2>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Subscribe to our newsletter for the latest payment processing tips, tutorials, and industry insights.
-          </p>
-          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            />
-            <button
-              type="submit"
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
       </div>
     </>
   );
